@@ -10,15 +10,24 @@ setwd("/Users/trava/OneDrive/Desktop/")
 data <-rio::import( "ZA7600_v3-0-0.dta")
 
 #pulizia dati
-data1 <- data.frame(data$v30, data$v31, data$v22, data$v23, data$v24)
-colnames(data1) <- c("v30", "v31", "v22", "v23", "v24")
+data1 <- data.frame(data$v30, data$v31, data$v33, data$v50, data$v32, data$v66, data$v22, data$v23, data$v24, data$v28, data$v34)
+colnames(data1) <- c("v30", "v31", "33", "v50", "v32", "v66", "v22", "v23", "v24", "v28", "v34")
 
 #vedere distribuzione di frequenze
+#1
 descr::freq(data1$v30, plot = F)
 descr::freq(data1$v31, plot = F)
+descr::freq(data1$v33, plot = F)
+descr::freq(data1$v50, plot = F)
+descr::freq(data1$v32, plot = F)
+descr::freq(data1$v66, plot = F)
+#2
 descr::freq(data1$v22, plot = F)
 descr::freq(data1$v23, plot = F)
+descr::freq(data1$v24, plot = F)
 descr::freq(data1$v28, plot = F)
+descr::freq(data1$v34, plot = F)
+
 
 #ricodifica delle variabili 
 data1 <- data1 %>%
